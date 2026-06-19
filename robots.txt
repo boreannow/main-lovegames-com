@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://boreannow.github.io/main-lovegames-com/sitemap.xml

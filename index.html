@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>爱游戏 · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9f8f5;
+            color: #2c2b28;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 横幅 hero */
+        .hero {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #e6e3db;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            color: #3d3a33;
+        }
+
+        .hero h1 span {
+            display: inline-block;
+            background: #f0ede6;
+            padding: 0 18px;
+            font-weight: 500;
+            letter-spacing: 4px;
+        }
+
+        .hero p {
+            margin-top: 18px;
+            font-size: 1.05rem;
+            color: #6b6760;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 背景说明 */
+        .section {
+            padding: 48px 0 36px;
+        }
+
+        .section:not(:last-child) {
+            border-bottom: 1px dashed #dad7cf;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a09888;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            margin-bottom: 18px;
+            color: #3d3a33;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #4f4b43;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #4a4740;
+        }
+
+        .intro-text {
+            background: #f4f1eb;
+            padding: 28px 30px;
+            border-radius: 2px;
+            margin: 24px 0 20px;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #5f5b53;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            background: #e3ddd0;
+            color: #2a2721;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 28px 0 16px;
+        }
+
+        li {
+            padding: 10px 0 10px 28px;
+            border-left: 2px solid #d6cebe;
+            margin-bottom: 8px;
+            position: relative;
+            color: #4a4740;
+        }
+
+        li::before {
+            content: "·";
+            position: absolute;
+            left: 6px;
+            color: #b7ad9a;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .faq-item {
+            margin: 26px 0;
+        }
+
+        .faq-question {
+            font-weight: 450;
+            font-size: 1.05rem;
+            color: #3d3a33;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .faq-question::before {
+            content: "Q";
+            font-size: 0.75rem;
+            color: #b7ad9a;
+            margin-right: 10px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .faq-answer {
+            padding-left: 24px;
+            color: #5d5950;
+            font-size: 0.95rem;
+        }
+
+        .faq-answer::before {
+            content: "–";
+            margin-right: 8px;
+            color: #c5bcaa;
+        }
+
+        .visit-hint {
+            margin-top: 50px;
+            padding: 28px 0 36px;
+            text-align: center;
+            border-top: 1px solid #e6e3db;
+        }
+
+        .visit-hint p {
+            font-size: 0.95rem;
+            color: #6b6760;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .visit-hint a {
+            font-weight: 450;
+        }
+
+        footer {
+            padding: 30px 0 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a09888;
+            border-top: 1px solid #e6e3db;
+            margin-top: 20px;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 0 18px;
+            }
+            .intro-text {
+                padding: 20px 18px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            li {
+                padding-left: 22px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 50px 0 30px;
+            }
+            .section {
+                padding: 32px 0 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 首页横幅 -->
+        <header class="hero">
+            <h1><span>爱游戏</span></h1>
+            <p>一处关注游戏内容、社区氛围与真实体验的站点，慢慢走，细细看。</p>
+        </header>
+
+        <!-- 背景说明 -->
+        <section class="section">
+            <div class="section-label">缘起 · 定位</div>
+            <h2>一个安静的角落，聊游戏</h2>
+            <p>
+                提到游戏，每个人都有自己的记忆与偏好。有人喜欢在开放世界里漫无目的地闲逛，有人偏爱精巧的谜题和叙事。而 <a href="https://main-lovegames.com">爱游戏</a> 
+                这个网站，更像是一个朋友开的笔记本——没有喧哗的排行榜，也没有铺天盖地的折扣信息。
+            </p>
+            <div class="intro-text">
+                <p>
+                    简单来说，这个站点想做到两件事：一是把那些被忽视的好游戏、老游戏重新放到桌面上聊一聊；二是呈现一个真实而克制的视角——不吹捧、不拉踩， 
+                    每个推荐或评测背后都是真实的游玩体验。
+                </p>
+                <p>
+                    站点的内容风格偏随笔和笔记，不会用“必玩神作”、“错过后悔”这类话术。如果你也受够了夸张的游戏营销，这里或许刚好对味。
+                </p>
+            </div>
+            <p>
+                从独立小品到经典旧作，从关卡设计到背景音乐，不定期更新。没有固定的发文排期，但每篇文章都经过斟酌。
+            </p>
+        </section>
+
+        <!-- 三段自然介绍：特点、场景、可信说明 -->
+        <section class="section">
+            <div class="section-label">特点 · 场景</div>
+            
+            <h3>不赶潮流，更看重沉淀</h3>
+            <p>
+                不是每款新作都值得第一时间体验，也不是每款老游戏都过时了。在 <a href="https://main-lovegames.com">爱游戏</a> 上， 
+                你会发现很多几年前甚至十几年前的游戏被重新拾起。作者相信，好设计经得起时间检验，而匆忙的评测往往忽略细节。
+            </p>
+
+            <h3>适合慢慢读的页面</h3>
+            <p>
+                没有弹窗、没有自动播放视频、没有浮动的分享按钮。整个站点的阅读体验接近一本纸质杂志——图片不多，文字干净，留白足够。
+                你可以在午休时、地铁上，或者睡前随便翻一翻。每篇文章的长度大多在 800 到 1500 字之间，不会让人感到疲惫。
+            </p>
+
+            <h3>可信不是口号，是习惯</h3>
+            <p>
+                站点从不说自己和任何厂商有合作，也不接付费评测。文章中提到的每一个游戏，作者都实际游玩超过十小时（很多在几十甚至上百小时）。
+                如果你看到某篇文章推荐了一款游戏，那大概率是作者真心喜欢，而不是因为推广费用。
+            </p>
+            <p>
+                这种习惯也让网站保持了某种“笨拙”——没有热门标签、没有算法推荐、没有用户评论。一切都是手工整理，缓慢但踏实。
+            </p>
+        </section>
+
+        <!-- 特点 + FAQ 摘要 -->
+        <section class="section">
+            <div class="section-label">常见好奇 · 简短回应</div>
+            <div class="faq-item">
+                <div class="faq-question">这里主要聊什么类型的游戏？</div>
+                <div class="faq-answer">没有严格限制，但偏向有叙事、有风格的作品。从像素风解谜到冷门策略都有涉及，最近还有一篇关于老式模拟经营游戏的回顾。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">更新频繁吗？</div>
+                <div class="faq-answer">不固定，有时一周两篇，有时一个月一篇。因为每篇都经过反复修改，所以没有硬性发文指标。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">游戏都是正版吗？怎么看待盗版问题？</div>
+                <div class="faq-answer">站点默认讨论的是正版体验，也会提供一些折扣信息或试玩版链接。作者认为尊重开发者是游戏生态的基础。</div>
+            </div>
+            <ul>
+                <li>所有评测均基于个人游玩，无商业合作</li>
+                <li>不写攻略式剧透，注重感受与设计分析</li>
+                <li>每篇文章末尾会标注游玩时长与平台</li>
+            </ul>
+        </section>
+
+        <!-- 页尾访问提示 -->
+        <div class="visit-hint">
+            <p>
+                如果你也喜欢不赶时间的游戏阅读，不妨在某个周末打开 
+                <a href="https://main-lovegames.com">爱游戏</a>， 
+                挑一篇感兴趣的文章，泡杯茶，慢慢读。没有推送打扰，也没有未读提醒。
+            </p>
+            <p style="margin-top: 18px; font-size: 0.9rem; color: #7f7a70;">
+                杂志式的节奏，手写般的温度。
+            </p>
+        </div>
+
+        <footer>
+            <span>内容无广告 · 无赞助 · 纯个人站点</span>
+        </footer>
+    </div>
+</body>
+</html>
